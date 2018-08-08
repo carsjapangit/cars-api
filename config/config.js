@@ -12,7 +12,7 @@ CONFIG.db_name      = process.env.DB_NAME       || 'sscars';
 CONFIG.db_user      = process.env.DB_USER       || 'sscarsadmin';
 CONFIG.db_password  = process.env.DB_PASSWORD   || 'carsjapan@git1';
 
-CONFIG.jwt_encryption  = process.env.JWT_ENCRYPTION || 'jwt_please_change';
+CONFIG.jwt_encryption  = process.env.JWT_ENCRYPTION || '1122334455';
 CONFIG.jwt_expiration  = process.env.JWT_EXPIRATION || '10000';
 
 module.exports = CONFIG;

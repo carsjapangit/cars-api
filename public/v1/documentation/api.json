@@ -552,10 +552,8 @@
             "description": "List of user object",
             "required": true,
             "schema": {
-              "type": "array",
-              "items": {
                 "$ref": "#/definitions/CreateUser"
-              }
+
             }
           }
         ],
@@ -584,7 +582,7 @@
     },
     "api_key": {
       "type": "apiKey",
-      "name": "api_key",
+      "name": "Authorization",
       "in": "header"
     }
   },
