@@ -572,6 +572,82 @@
           }
         }
       }
+    },
+    "/product/create": {
+      "post": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Product creation",
+        "description": "create product",
+        "operationId": "createUsersWithArrayInput",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "List of Product object",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/CreateProduct"
+
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "success",
+            "schema": {
+              "$ref": "#/definitions/CreateProduct"
+            }
+          },
+          "422": {
+            "description": "error",
+            "schema": {
+              "$ref": "#/definitions/CreateProduct"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/product": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "List Products",
+        "description": "List Products",
+        "operationId": "createUsersWithArrayInput",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "schema": {
+              "$ref": "#/definitions/CreateProduct"
+            }
+          },
+          "422": {
+            "description": "error",
+            "schema": {
+              "$ref": "#/definitions/CreateProduct"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {
@@ -587,6 +663,31 @@
     }
   },
   "definitions": {
+    "CreateProduct": {
+      "type": "object",
+      "properties": {
+        "stockNo": {
+          "type": "integer",
+          "example": "6600"
+        },
+        "maker": {
+          "type": "string",
+          "example": "Royal Enfield"
+        },
+        "model": {
+          "type": "string",
+          "example": "Hatch-Back"
+        },
+        "year": {
+          "type": "string",
+          "example": "2018"
+        },
+        "seats": {
+          "type": "integer",
+          "example": 4
+        }
+      }
+    },
     "CreateUser": {
       "type": "object",
       "properties": {

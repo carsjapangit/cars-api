@@ -4,6 +4,7 @@ const router 			= express.Router();
 const UserController 	= require('../controllers/user.controller');
 const CompanyController = require('../controllers/company.controller');
 const HomeController 	= require('../controllers/home.controller');
+const ProductController 	= require('../controllers/product.controller');
 
 const custom 	        = require('./../middleware/custom');
 
@@ -33,6 +34,9 @@ router.delete(  '/companies/:company_id', passport.authenticate('jwt', {session:
 
 router.get('/dash', passport.authenticate('jwt', {session:false}),HomeController.Dashboard)
 
+
+router.post(    '/product/create',            ProductController.create);
+router.get(    '/product',            passport.authenticate('jwt', {session:false}), ProductController.get);
 
 //********* API DOCUMENTATION **********
 router.use('/docs/api.json',            express.static(path.join(__dirname, '/../public/v1/documentation/api.json')));
